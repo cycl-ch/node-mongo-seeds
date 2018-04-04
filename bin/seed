@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const path = require('path');
-const yargs = require('yargs').argv;
-const fs = require('fs');
-const lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
+var path = require('path');
+var yargs = require('yargs').argv;
+var fs = require('fs');
+var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
 
 require(lib + '/seed.js').seed(
   yargs.path ? path.resolve(yargs.path) : process.cwd() + '/seeds'
